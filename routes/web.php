@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Models\Mahasiswa;
 use Illuminate\Request;
+use Illuminate\Routing\RouteRegistrar;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/', function () {
 Route::get('mahasiswas/nilai/{Nim}', [MahasiswaController::class, 'khs']);
 
 Route::resource('mahasiswas', MahasiswaController::class);
+
+Route::get('mahasiswas/cetakKHS/{Nim}', [MahasiswaController::class, 'cetak_khs'])->name('print');
